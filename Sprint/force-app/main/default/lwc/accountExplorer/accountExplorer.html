@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Account Explorer" icon-name="standard:account">
+        <div class="slds-var-p-horizontal_medium">
+            <lightning-input
+                type="search"
+                label="Search accounts by name"
+                placeholder="Type to search..."
+                onchange={handleSearch}>
+            </lightning-input>
+        </div>
+
+        <div class="slds-var-p-around_medium">
+            <template lwc:if={isLoading}>
+                <lightning-spinner
+                    alternative-text="Loading accounts"
+                    size="small">
+                </lightning-spinner>
+            </template>
+
+            <template lwc:if={hasResults}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={accounts}
+                    columns={columns}
+                    sorted-by={sortedBy}
+                    sorted-direction={sortDirection}
+                    onsort={handleSort}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </template>
+
+            <template lwc:if={isEmpty}>
+                <div class="slds-align_absolute-center slds-var-p-vertical_large slds-text-color_weak">
+                    No accounts match your search.
+                </div>
+            </template>
+
+            <template lwc:if={error}>
+                <div class="slds-text-color_error slds-var-p-vertical_small">
+                    Something went wrong loading accounts.
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
