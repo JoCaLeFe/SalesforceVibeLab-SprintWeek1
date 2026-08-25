@@ -37,36 +37,72 @@ export default function AccountExplorer() {
     }
   }
 
+  const count = visibleAccounts.length;
+
   return (
     <section className="card">
-      <input
-        className="search"
-        type="search"
-        placeholder="Search accounts by name..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="toolbar">
+        <div className="search-wrap">
+          <svg className="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="16.5" y1="16.5" x2="21" y2="21" />
+          </svg>
+          <input
+            className="search"
+            type="search"
+            placeholder="Search accounts by name..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            aria-label="Search accounts by name"
+          />
+        </div>
+        <span className="count">
+          {count} {count === 1 ? 'account' : 'accounts'}
+        </span>
+      </div>
 
-      <table className="table">
-        <thead>
-          <tr>
-            {COLUMNS.map((col) => (
-              <th key={col.key} onClick={() => toggleSort(col.key)}>
-                {col.label}
-                {sortBy === col.key ? (sortDir === 'asc' ? ' ▲' : ' ▼') : ''}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {visibleAccounts.map((account, index) => (
-            <AccountRow key={`${account.Name}-${index}`} account={account} />
-          ))}
-        </tbody>
-      </table>
-
-      {visibleAccounts.length === 0 && (
-        <p className="empty">No accounts match your search.</p>
+      {count > 0 ? (
+        <div className="table-scroll">
+          <table className="table">
+            <thead>
+              <tr>
+                {COLUMNS.map((col) => (
+                  <th
+                    key={col.key}
+                    onClick={() => toggleSort(col.key)}
+                    aria-sort={
+                      sortBy === col.key
+                        ? sortDir === 'asc'
+                          ? 'ascending'
+                          : 'descending'
+                        : 'none'
+                    }
+                  >
+                    <span className="th-inner">
+                      {col.label}
+                      <span className="sort-caret">
+                        {sortBy === col.key ? (sortDir === 'asc' ? '▲' : '▼') : ''}
+                      </span>
+                    </span>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {visibleAccounts.map((account, index) => (
+                <AccountRow key={`${account.Name}-${index}`} account={account} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div className="empty">
+          <div className="empty-icon" aria-hidden="true">🔍</div>
+          <p className="empty-title">No accounts found</p>
+          <p className="empty-sub">
+            Nothing matches “{search}”. Try a different search.
+          </p>
+        </div>
       )}
     </section>
   );
