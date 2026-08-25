@@ -57,6 +57,25 @@ The app reads `src/data/Account_Sample_Data.json` (the provided sample data) —
 <!-- (your words) Your approach, what was difficult, what you'd do differently. -->
 _To complete: describe your approach, the hardest part (e.g. Node version / org auth), and what you'd change next time._
 
+### Why two apps, and why the React app has no live Salesforce connection
+
+The same "Account Explorer" is built twice on purpose, to contrast two worlds:
+
+- The **LWC** lives *inside* the Salesforce platform. It talks directly to an Apex
+  controller (`AccountController`) that runs SOQL against the org, and it is deployed
+  to a Lightning page. Platform-native UI can query the org directly because it runs
+  behind Salesforce's own security.
+- The **React app** lives *outside* the platform, on my own stack, and reads a static
+  `Account_Sample_Data.json`. It deliberately has **no live Salesforce connection**.
+
+The React app skips a live connection for good reasons: putting org credentials in
+browser JavaScript is a security anti-pattern (anyone can read them in DevTools); a
+static JSON keeps the app reproducible so it runs anywhere without my credentials; and
+the JSON acts as a data contract/mock — exactly how a real front end is developed before
+a backend is wired in. In production, a React app reaches Salesforce **through a backend**
+(OAuth 2.0 + REST/SOQL), never directly from the browser. The constant across both apps
+is the data shape (`Name`, `Industry`, `Phone`); only the presentation layer changes.
+
 ## Blockers encountered
 
 See `AI_WORK_LOG.md` for the AI-assisted troubleshooting. Key technical blockers this week:
