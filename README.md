@@ -14,15 +14,15 @@ This repository contains my Week 1 deliverables for the Professional Readiness S
 
 | Folder | What it is |
 |---|---|
-| `Sprint/` | Salesforce DX project (Account query + Account Explorer LWC) |
-| `react-account-explorer/` | Local React app (reads `Account_Sample_Data.json`, no live Salesforce connection) |
+| `SalesforceAccountExplorer/` | Salesforce DX project (Account query + Account Explorer LWC) |
+| `ReactAccountExplorer/` | Local React app (reads `Account_Sample_Data.json`, no live Salesforce connection) |
 
 ## How to install and run the Salesforce project
 
 Prerequisites: Node 22, Salesforce CLI (`sf`), VS Code + Salesforce Extension Pack.
 
 ```bash
-cd Sprint
+cd SalesforceAccountExplorer
 # Authenticate the CLI to your org (opens a browser):
 sf org login web --alias playground
 # Confirm the connection:
@@ -38,7 +38,7 @@ sf project deploy start --target-org playground
 Prerequisites: Node 22, npm.
 
 ```bash
-cd react-account-explorer
+cd ReactAccountExplorer
 npm install
 npm run dev      # serves at http://localhost:5173
 ```
