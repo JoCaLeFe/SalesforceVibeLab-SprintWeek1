@@ -35,13 +35,15 @@ sf project deploy start --target-org playground
 
 ## How to install and run the React application
 
-<!-- Completed in Step 3 -->
+Prerequisites: Node 22, npm.
+
 ```bash
 cd react-account-explorer
 npm install
-npm run dev
+npm run dev      # serves at http://localhost:5173
 ```
-_(Pending — will be filled in when the React app is built.)_
+
+The app reads `src/data/Account_Sample_Data.json` (the provided sample data) — it has **no live Salesforce connection**. Features: search by name, click a column header to sort, and an empty state when no account matches.
 
 ## What I built
 
