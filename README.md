@@ -17,6 +17,14 @@ This repository contains my Week 1 deliverables for the Professional Readiness S
 | `SalesforceAccountExplorer/` | Salesforce DX project (Account query + Account Explorer LWC) |
 | `ReactAccountExplorer/` | Local React app (reads `Account_Sample_Data.json`, no live Salesforce connection) |
 
+## Screenshots (evidence)
+
+| Evidence | Screenshot |
+|---|---|
+| Connected org · Account query · successful deployment | [`01-connected-org-query-deploy.png`](Screenshots/01-connected-org-query-deploy.png) |
+| Account Explorer LWC on a Lightning page | [`02-lwc-account-explorer.png`](Screenshots/02-lwc-account-explorer.png) |
+| React Account Explorer running locally | [`03-react-app.png`](Screenshots/03-react-app.png) |
+
 ## How to install and run the Salesforce project
 
 Prerequisites: Node 22, Salesforce CLI (`sf`), VS Code + Salesforce Extension Pack.
