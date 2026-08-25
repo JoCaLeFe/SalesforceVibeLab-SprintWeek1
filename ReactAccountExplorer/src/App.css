@@ -11,8 +11,10 @@
   --radius: 16px;
 }
 
+/* Dark tokens: applied when the system prefers dark (unless the user forced
+   light), and always when the user explicitly picks dark via the toggle. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --bg: #0f1420;
     --bg-accent: #131a2a;
     --surface: #1a2233;
@@ -23,6 +25,18 @@
     --accent-soft: rgba(96, 165, 250, 0.16);
     --shadow: 0 12px 34px -14px rgba(0, 0, 0, 0.6);
   }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0f1420;
+  --bg-accent: #131a2a;
+  --surface: #1a2233;
+  --border: #2a3346;
+  --text: #e5e9f0;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.16);
+  --shadow: 0 12px 34px -14px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -292,7 +306,45 @@ h1 {
 /* ── Footer ─────────────────────────────────────── */
 .app-footer {
   margin-top: 1.5rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
   font-size: 0.78rem;
   color: var(--muted);
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }

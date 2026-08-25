@@ -1,4 +1,5 @@
 import AccountExplorer from './components/AccountExplorer.jsx';
+import ThemeToggle from './components/ThemeToggle.jsx';
 
 export default function App() {
   return (
@@ -20,7 +21,10 @@ export default function App() {
         <AccountExplorer />
       </main>
 
-      <footer className="app-footer">SF Vibe Lab UADY · Week 1</footer>
+      <footer className="app-footer">
+        <span>SF Vibe Lab UADY · Week 1</span>
+        <ThemeToggle />
+      </footer>
     </div>
   );
 }
