@@ -28,7 +28,10 @@ SalesforceVibeLab-SprintWeek1/
 ├── Screenshots/                      # Evidence
 │   ├── 01-connected-org-query-deploy.png
 │   ├── 02-lwc-account-explorer.png
-│   └── 03-react-app.png
+│   ├── 03-react-app.png
+│   ├── 04-trailhead-agentforce-platform-basics.png
+│   ├── 05-trailhead-vscode-quickstart.png
+│   └── 06-trailhead-lwc-quickstart.png
 │
 ├── AI_WORK_LOG.md
 └── README.md
@@ -41,6 +44,9 @@ SalesforceVibeLab-SprintWeek1/
 | Connected org · Account query · successful deployment | [`01-connected-org-query-deploy.png`](Screenshots/01-connected-org-query-deploy.png) |
 | Account Explorer LWC on a Lightning page | [`02-lwc-account-explorer.png`](Screenshots/02-lwc-account-explorer.png) |
 | React Account Explorer running locally | [`03-react-app.png`](Screenshots/03-react-app.png) |
+| Trailhead — Agentforce 360 Platform Development Basics (completed) | [`04-trailhead-agentforce-platform-basics.png`](Screenshots/04-trailhead-agentforce-platform-basics.png) |
+| Trailhead — Quick Start: VS Code for Salesforce Development (completed) | [`05-trailhead-vscode-quickstart.png`](Screenshots/05-trailhead-vscode-quickstart.png) |
+| Trailhead — Quick Start: Lightning Web Components (completed) | [`06-trailhead-lwc-quickstart.png`](Screenshots/06-trailhead-lwc-quickstart.png) |
 
 ## How to install and run the Salesforce project
 
