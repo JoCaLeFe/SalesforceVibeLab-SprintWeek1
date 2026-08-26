@@ -91,6 +91,14 @@ search/sort logic are nearly identical between LWC and React.
 Next time I would set up the environment end to end and verify every tool before starting
 any application code, rather than discovering version constraints while already building.
 
+I used Claude Code as a pair-programmer throughout. It generated most of the Apex, LWC and
+React code and explained the Salesforce concepts that were new to me — for example, that an
+LWC only shows up in the Lightning App Builder once `isExposed` and the right `targets` are
+set in its `.js-meta.xml`. I kept control of the decisions (which org to use, the repo
+structure, the UI), ran every command and deployment against my own org, verified each
+result, and reviewed the code so I can explain how it works. The specific prompts, the
+problems they caused, and how I checked them are in `AI_WORK_LOG.md`.
+
 ### Why two apps, and why the React app has no live Salesforce connection
 
 The same "Account Explorer" is built twice on purpose, to contrast two worlds:
