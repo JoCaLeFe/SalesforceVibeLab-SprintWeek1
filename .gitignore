@@ -33,3 +33,7 @@ yarn-error.log*
 Thumbs.db
 .idea/
 *.swp
+
+# ── Personal Claude Code context (safety net — never commit) ──
+CLAUDE.md
+.claude/
