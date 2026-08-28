@@ -7,6 +7,12 @@
 
 This repository contains my Week 1 deliverables for the Professional Readiness Sprint: a Salesforce DX project connected to my own org (used to query `Account` records and deploy an **Account Explorer** Lightning Web Component), and a local **React** app that browses Account data from a provided JSON file.
 
+## 🎥 Demo video
+
+A walkthrough of everything in this repo (Trailhead, dev environment, the connected Salesforce project, the LWC, the React app, and how I used AI): **[DemoVideo/week1-demo.mp4](DemoVideo/week1-demo.mp4)**
+
+> GitHub streams the file inline when you open it. To download: open the link and use the download button, or clone the repo.
+
 ## Repository structure
 
 ```
@@ -33,6 +39,7 @@ SalesforceVibeLab-SprintWeek1/
 │   ├── 05-trailhead-vscode-quickstart.png
 │   └── 06-trailhead-lwc-quickstart.png
 │
+├── DemoVideo/                        # 🎥 Demo walkthrough (week1-demo.mp4)
 ├── AI_WORK_LOG.md
 └── README.md
 ```
